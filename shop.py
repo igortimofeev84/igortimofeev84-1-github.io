@@ -123,11 +123,13 @@
 # item= driver.find_element_by_css_selector(".wpmenucart-contents .cartcontents")
 # item_get_text = item.text
 # assert item_get_text == "1 Item"
+# print("В корзине один товар")
 # # # ############### проверка цены #######################
 # time.sleep(3)
 # cost= driver.find_element_by_css_selector(".wpmenucart-contents .amount")
 # cost_get_text = cost.text
 # assert cost_get_text == "₹180.00"
+# print("Стоимость товара ₹180.00")
 # time.sleep(2)
 # basket = driver.find_element_by_class_name("wpmenucart-icon-shopping-cart-0").click()
 # ############# проверка на отображение стоимости subtotal ###########
@@ -153,7 +155,24 @@
 # time.sleep(2)
 # remove1 = driver.find_element_by_css_selector(".cart_item:nth-child(1) .remove").click()
 # time.sleep(2)
-# Undo=driver.find_element_by_css_selector(".woocommerce-message :nth-child(1)").click()
+# Undo=driver.find_element_by_css_selector(".woocommerce-message :nth-child(1)")
+# Undo.click()
+# quantity=driver.find_element_by_css_selector(".cart_item:nth-child(1) .input-text.qty.text")
+# quantity.clear()
+# quantity.send_keys("3")
+# Update_Basket = driver.find_element_by_css_selector("[name=update_cart]").click()
+# quantity_field = driver.find_element_by_css_selector(".cart_item:nth-child(1) .input-text.qty.text")
+# quantity_field_value = quantity_field.get_attribute("value")
+# assert quantity_field_value == '3'
+# print("Количество товара (JS Data Structures and Algorithm) = 3")
+# time.sleep(3)
+# apply_coupon = driver.find_element_by_css_selector("[name=apply_coupon]")
+# apply_coupon.click()
+# time.sleep(2)
+# error_coupon_code = driver.find_element_by_css_selector("ul.woocommerce-error")
+# error_coupon_code_text = error_coupon_code.text
+# assert error_coupon_code_text == 'Please enter a coupon code.'
+# print("Текст в элементе найден")
 []######################## Покупка товара ######################################
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import WebDriverWait
