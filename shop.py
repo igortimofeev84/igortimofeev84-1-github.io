@@ -118,14 +118,14 @@
 # Shop = driver.find_element_by_css_selector("#menu-item-40>:nth-child(1)").click()
 # driver.execute_script("window.scrollBy(0, 400);")
 # tobasket = driver.find_element_by_css_selector(".post-182>:nth-child(2)").click()
-# ############### проверка количества товаров (тест падает) ##########
+# ############### проверка количества товаров ##########
 # time.sleep(3)
-# item= driver.find_element_by_id("main-nav-wrap")
+# item= driver.find_element_by_css_selector(".wpmenucart-contents .cartcontents")
 # item_get_text = item.text
-# assert item_get_text == "1 item"
-# # ############### проверка цены (тест падает)#######################
+# assert item_get_text == "1 Item"
+# # # ############### проверка цены #######################
 # time.sleep(3)
-# cost= driver.find_element_by_class_name("wpmenucart-contents")
+# cost= driver.find_element_by_css_selector(".wpmenucart-contents .amount")
 # cost_get_text = cost.text
 # assert cost_get_text == "₹180.00"
 # time.sleep(2)
@@ -207,7 +207,7 @@
 # time.sleep(2)
 # thankyou = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "woocommerce-thankyou-order-received"), "Thank you. Your order has been received."))
 # print(thankyou)
-# method= wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "method"), "Check Payments"))
+# method= wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".shop_table.order_details :nth-child(3)>td"), "Check Payments"))
 # print(method)
 
 
