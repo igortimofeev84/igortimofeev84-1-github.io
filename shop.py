@@ -19,6 +19,7 @@
 # HTML = driver.find_element_by_css_selector(".post-181 :nth-child(2)").click()
 # HTML5 = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "product_title"), "HTML5 Forms"))
 # print(HTML5)
+
 []####################### Количество товаров в категории #######################
 # import time
 # from selenium import webdriver
@@ -39,6 +40,7 @@
 # else:
 #      print("Ошибка. Количество товаров : " + str(len(post)))
 # driver.quit()
+
 []####################### Сортировка товаров ###################################
 # import time
 # from selenium import webdriver
@@ -52,7 +54,7 @@
 # log_password.send_keys("Alek$123A!")
 # Login = driver.find_element_by_css_selector("[value=Login]").click()
 # Shop = driver.find_element_by_css_selector("#menu-item-40>:nth-child(1)").click()
-# ######### Проверка селектора по умолчанию
+# # Проверка селектора по умолчанию
 # menu_order= driver.find_element_by_css_selector("option[value=menu_order]")
 # menu_order_selected =menu_order .get_attribute("selected")
 # print(menu_order_selected)
@@ -62,7 +64,7 @@
 #      print("the default sorting is selecte сотировка по умолчанию выбрана ")
 # driver.find_element_by_tag_name("select").click()
 # driver.find_element_by_css_selector("option:nth-child(6)").click()
-# ############ Проверка селектора от большей цены к меньшей
+# # Проверка селектора от большей цены к меньшей
 # price_desc= driver.find_element_by_css_selector("option[value=price-desc]")
 # price_desc_selected = price_desc.get_attribute("selected")
 # print(price_desc_selected)
@@ -71,6 +73,7 @@
 # else:
 #      print("Price от большей к меньшей ")
 # driver.quit()
+
 []####################### Отображение, скидка товара ###########################
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -90,20 +93,21 @@
 # Login = driver.find_element_by_css_selector("[value=Login]").click()
 # Shop = driver.find_element_by_css_selector("#menu-item-40>:nth-child(1)").click()
 # Android=driver.find_element_by_css_selector(".wp-post-image:nth-child(2)").click()
-# ########### проверка cтарой цены  ########################
+# # проверка cтарой цены
 # oldprice = driver.find_element_by_class_name("price")
 # oldprice_get_text = oldprice.text
 # assert "600.00" in oldprice_get_text
 # print("старая цена ₹600.00")
-# ########### проверка новой цены ###########################
+# #проверка новой цены
 # newprice = driver.find_element_by_class_name("price")
 # newprice_get_text = newprice.text
 # assert "450.00" in newprice_get_text
 # print("новая цена ₹450.00")
-# ############ явное ожидание на предпросмотр обложки ########
+# # явное ожидание на предпросмотр обложки
 # img = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "wp-post-image"))).click()
-# ############ закрытие предпросмотра ########################
+# # закрытие предпросмотра
 # close = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "pp_close"))).click()
+
 []######################## Проверка цены в корзине #############################
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -118,13 +122,13 @@
 # Shop = driver.find_element_by_css_selector("#menu-item-40>:nth-child(1)").click()
 # driver.execute_script("window.scrollBy(0, 400);")
 # tobasket = driver.find_element_by_css_selector(".post-182>:nth-child(2)").click()
-# ############### проверка количества товаров ##########
+# # проверка количества товаров
 # time.sleep(3)
 # item= driver.find_element_by_css_selector(".wpmenucart-contents .cartcontents")
 # item_get_text = item.text
 # assert item_get_text == "1 Item"
 # print("В корзине один товар")
-# # # ############### проверка цены #######################
+# # проверка цены
 # time.sleep(3)
 # cost= driver.find_element_by_css_selector(".wpmenucart-contents .amount")
 # cost_get_text = cost.text
@@ -132,12 +136,13 @@
 # print("Стоимость товара ₹180.00")
 # time.sleep(2)
 # basket = driver.find_element_by_class_name("wpmenucart-icon-shopping-cart-0").click()
-# ############# проверка на отображение стоимости subtotal ###########
+# # проверка на отображение стоимости subtotal
 # subtotal = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "cart-subtotal"), "₹180.00"))
 # print(subtotal)
-# ############# проверка на отображение стоимости total ##############
+# # проверка на отображение стоимости total
 # total = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "order-total"), "₹189.00"))
 # print(total)
+
 []######################## Работа в корзине ####################################
 # import time
 # from selenium import webdriver
@@ -173,6 +178,7 @@
 # error_coupon_code_text = error_coupon_code.text
 # assert error_coupon_code_text == 'Please enter a coupon code.'
 # print("Текст в элементе найден")
+
 []######################## Покупка товара ######################################
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -191,14 +197,14 @@
 # basket = driver.find_element_by_class_name("wpmenucart-icon-shopping-cart-0").click()
 # time.sleep(2)
 # checkout_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "checkout-button"))).click()
-# ########################## Заполнение полей данных #####################
+# # Заполнение полей данных
 # first_name = wait.until(EC.element_to_be_clickable((By.ID, "billing_first_name")))
 # first_name.send_keys("Simon")
 # time.sleep(3)
 # last_name = driver.find_element_by_id("billing_last_name")
 # last_name.send_keys("Tanner")
 # time.sleep(3)
-# ######################### Данные о адресе ############################
+# # Данные о адресе
 # Email= driver.find_element_by_id("billing_email")
 # Email.send_keys("djl@mail.ru")
 # phone= driver.find_element_by_id("billing_phone")
@@ -216,13 +222,13 @@
 # time.sleep(2)
 # state= driver.find_element_by_id("billing_state")
 # state.send_keys("is unknown")
-# ######################## Оплата #######################################
+# # Оплата
 # driver.execute_script("window.scrollBy(0, 600);")
 # time.sleep(3)
 # radio_btn = driver.find_element_by_id("payment_method_cheque").click()
 # time.sleep(2)
 # place_order= driver.find_element_by_id("place_order").click()
-# ####################### Явные ожидания ################################
+# # Явные ожидания
 # time.sleep(2)
 # thankyou = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "woocommerce-thankyou-order-received"), "Thank you. Your order has been received."))
 # print(thankyou)
