@@ -17,6 +17,7 @@
 # Register = driver.find_element_by_css_selector("[value=Register]").click()
 # Register1= wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[value=Register]"))).click()
 # driver.quit()
+
 [] #################   Логин в систему  ##################################
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import WebDriverWait
