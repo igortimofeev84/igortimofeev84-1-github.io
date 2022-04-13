@@ -18,7 +18,7 @@
 # Shop = driver.find_element_by_css_selector("#menu-item-40>:nth-child(1)").click()
 # HTML = driver.find_element_by_css_selector(".post-181 :nth-child(2)").click()
 # HTML5 = wait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, "product_title"), "HTML5 Forms"))
-# print(HTML5)
+# print(HTML5) 
 
 []####################### Количество товаров в категории #######################
 # import time
